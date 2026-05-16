@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('git checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ygminds73/Ekart.git'
+                git branch: 'master', url: 'https://github.com/Kalp31/Banking.git'
             }
         }
 
@@ -68,7 +68,7 @@ pipeline {
         stage('build and Tag docker image') {
             steps {
                 script {
-                        sh "docker build -t youngminds73/ekart:latest -f docker/Dockerfile ."
+                        sh "docker build -t Banking:latest -f docker/Dockerfile ."
                     }
             }
         }
