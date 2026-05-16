@@ -68,7 +68,7 @@ pipeline {
         stage('build and Tag docker image') {
             steps {
                 script {
-                        sh "docker build -t Banking:latest -f docker/Dockerfile ."
+                        sh "docker build -t banking:latest -f docker/Dockerfile ."
                     }
             }
         }
