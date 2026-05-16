@@ -68,7 +68,7 @@ pipeline {
         stage('build and Tag docker image') {
             steps {
                 script {
-                        sh "docker build -t banking:latest -f docker/Dockerfile ."
+                        sh "docker build -t kalpeshshinde31/banking:latest -f docker/Dockerfile ."
                     }
             }
         }
@@ -78,7 +78,7 @@ pipeline {
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
                    sh 'docker login -u kalpeshshinde31 -p ${dockerhubpwd}'}
-                   sh 'docker push banking:latest'
+                   sh 'docker push kalpeshshinde31/banking:latest'
                 }
             }
         }
